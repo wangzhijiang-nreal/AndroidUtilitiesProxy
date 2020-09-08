@@ -1,0 +1,3 @@
+include ':utilitiesproxy'
+include ':app'
+rootProject.name = "AndroidUtilities"
