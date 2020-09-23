@@ -1,5 +1,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ai.nreal.android.utilitiesproxy">
 
-    /
+    <!-- PhoneCallListener
+
+    To get incoming number, READ_CALL_LOG permission should be granted.
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application>
+        <receiver android:name=".PhoneCallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+    </application>
+
 </manifest>

@@ -30,3 +30,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
 }
+
+afterEvaluate {
+    task aar(dependsOn: assembleRelease) {
+        copy {
+            from 'build/outputs/aar'
+            into '../../../Assets/UnityAndroidUtilities/Runtime/Plugins/Android'
+            include '**/*-release.aar'
+        }
+    }
+}
